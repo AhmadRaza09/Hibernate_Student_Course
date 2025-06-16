@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,8 +22,10 @@ public class Course {
     @Setter(AccessLevel.NONE)
     private Long id;
 
+    @Size(min = 3, max = 225, message = "{}")
     private String name;
 
+    @Size(min = 150, max = 500)
     private String description;
 
     @Override
